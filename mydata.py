@@ -93,7 +93,7 @@ class getHotpotData():
         self.args = args
         self.trainpath= trainPath
         self.devpath= devPath
-        
+        self.batch_size = args.batch_size
         # Tokenizer
         #self.spacy_Tokenizer = spacy.load('en_core_web_sm') 
         #self.bert_Tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
@@ -131,7 +131,7 @@ class getHotpotData():
                                             sort_within_batch=False,
                                             repeat=False,device=args.gpu)
         
-        
+
         # caculate block size
         #self.calculate_block_size(args.batch_size)   
     """          
@@ -166,23 +166,6 @@ class getHotpotData():
         if s is 0:       
             res.append(x[s:-1])
         return res  
-
-
-# In[ ]:
-
-
-
-
-
-# In[3]:
-
-
-x = '1,2,3'
-y= [int(i) for i in x.split(',')]
-y
-
-
-# In[ ]:
 
 
 
